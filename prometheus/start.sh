@@ -3,6 +3,7 @@
 # for specific flags for run
 docker run -d -p 9090:9090 --name prom \
     -v `pwd`/conf:/etc/prometheus \
+    -v `pwd`/data:/prometheus \
     prom/prometheus:v2.28.0 \
     --config.file=/etc/prometheus/prometheus.yml \
     --web.config.file=/etc/prometheus/web.yml \
