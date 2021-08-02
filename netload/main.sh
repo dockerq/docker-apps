@@ -7,7 +7,7 @@
 # 5是sleep时间，单位是秒，如果为0则不sleep，一直循环下载
 # http://localhost:8080/file.txt 是下载文件的url地址
 ##
-set -ex
+# set -ex
 
 # 默认参数
 limit_rate=500k
@@ -33,7 +33,7 @@ main() {
     for (( ; ; ))
     do
         # wget --no-proxy --limit-rate=$limit_rate -O $file_name $file_url
-        wget --limit-rate=$limit_rate -O $file_name $file_url
+        wget -q --limit-rate=$limit_rate -O $file_name $file_url
         rm $file_name
         if (($interval >= 1));then
             sleep $interval
