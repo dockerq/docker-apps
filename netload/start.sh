@@ -1,5 +1,7 @@
 #! /bin/bash
 
-docker run -d --name netload \
-    netload:v1 \
-    /tmp/main.sh 300k 1 https://wangdoc.com/bash/condition.html
+# curl localhost:8080/load_100m
+
+docker run -d --name netloadv2 \
+    -p 8080:8080
+    netload:v2
