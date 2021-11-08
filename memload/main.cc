@@ -17,8 +17,9 @@ int main(int argc, char* argv[]) {
     printf("mbyte is %d\n", mbyte);
     if(mbyte<=0 || mbyte>GB) {
         printf("mbyte %d is invalid.\n", mbyte);
+        return -1;
     }
-    int total = 1024*1024*mbyte; // 如果mbyte是200，表示200M
+    int total = 1024*1024*mbyte; // 比如mbyte是200，表示200M
     size_t base = sizeof(int);
     vector<int> arr(total/base, 1);
 
