@@ -1,3 +1,5 @@
 registry/data
 kube-metric/kube-state-metrics
 a.out
+maxkb/data
+anythingllm/data
