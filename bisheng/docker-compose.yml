@@ -2,7 +2,6 @@ services:
   mysql:
     container_name: bisheng-mysql
     image: mysql:8.0.36
-
     ports:
       - "13306:3306"
     environment:
@@ -170,3 +169,27 @@ services:
     depends_on:
       - etcd
       - minio
+  oneapi:
+    container_name: oneapi
+    image: ghcr.io/songquanpeng/one-api:latest
+    ports:
+      - 23001:3000
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: always
+    environment:
+      # mysql 连接参数
+      - SQL_DSN=root:1234@tcp(mysql:3306)/oneapi
+      # 登录凭证加密密钥
+      - SESSION_SECRET=oneapikey
+      # 内存缓存
+      - MEMORY_CACHE_ENABLED=true
+      # 启动聚合更新，减少数据交互频率
+      - BATCH_UPDATE_ENABLED=true
+      # 聚合更新时长
+      - BATCH_UPDATE_INTERVAL=10
+      # 初始化的 root 密钥（建议部署完后更改，否则容易泄露）
+      - INITIAL_ROOT_TOKEN=fastgpt
+    volumes:
+      - ./data/oneapi:/data
