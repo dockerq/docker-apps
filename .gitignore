@@ -5,3 +5,6 @@ maxkb/data
 anythingllm/data
 anythingllm/.env
 fastgpt/data
+bisheng/data
+bisheng/mysql/data
+bisheng/office/bisheng/*.gz
