@@ -90,8 +90,8 @@ services:
     container_name: mysql-container-local
     privileged: true
     image: mysql:8.0.36
-        ports:
-          - "33306:3306"
+    ports:
+      - "33306:3306"
     command: --max-connections=10000
     environment:
       - MYSQL_ROOT_PASSWORD=123456
