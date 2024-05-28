@@ -8,3 +8,4 @@ fastgpt/data
 bisheng/data
 bisheng/mysql/data
 bisheng/office/bisheng/*.gz
+ragflow/ragflow-logs/
