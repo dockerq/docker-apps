@@ -33,6 +33,29 @@
       "defaultConfig": {}
     },
     {
+      "model": "qwen2:7b",
+      "name": "qwen2:7b",
+      "maxContext": 16000,
+      "avatar": "/imgs/model/openai.svg",
+      "maxResponse": 4000,
+      "quoteMaxToken": 13000,
+      "maxTemperature": 1.2,
+      "charsPointsPrice": 0,
+      "censor": false,
+      "vision": false,
+      "datasetProcess": true,
+      "usedInClassify": true,
+      "usedInExtractFields": true,
+      "usedInToolCall": true,
+      "usedInQueryExtension": true,
+      "toolChoice": true,
+      "functionCall": true,
+      "customCQPrompt": "",
+      "customExtractPrompt": "",
+      "defaultSystemChatPrompt": "",
+      "defaultConfig": {}
+    },
+    {
       "model": "phi3:latest",
       "name": "phi3:latest",
       "avatar": "/imgs/model/openai.svg",
@@ -104,8 +127,8 @@
   ],
   "vectorModels": [
     {
-      "model": "gemma:7b-text",
-      "name": "gemma:7b-text",
+      "model": "nomic-embed-text:latest",
+      "name": "nomic-embed-text:latest",
       "avatar": "/imgs/model/openai.svg",
       "charsPointsPrice": 0,
       "defaultToken": 512,
